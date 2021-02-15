@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator Results</title>
+	</head>
+	<body>
+		<!-- Your HTML code goes here! -->
+		{% if users_calc_operation == 'add': %}
+		<h2>
+			You added {{users_calc_num1}} with {{users_calc_num2}} and resulted with
+			{{(users_calc_num1 | int) + (users_calc_num2 | int)}}
+		</h2>
+		{% elif users_calc_operation == 'subtract': %}
+
+		<h2>
+			subtracted {{users_calc_num1}} with {{users_calc_num2}} and resulted with
+			{{(users_calc_num1 | int) - (users_calc_num2 | int)}}
+		</h2>
+		{% elif users_calc_operation == 'multiply': %}
+
+		<h2>
+			You multiplied {{users_calc_num1}} with {{users_calc_num2}} and resulted
+			with {{(users_calc_num1 | int) * (users_calc_num2 | int)}}
+		</h2>
+		{% elif users_calc_operation == 'divide': %}
+
+		<h2>
+			You divided {{users_calc_num1}} with {{users_calc_num2}} and resulted with
+			{{(users_calc_num1 | int) / (users_calc_num2 | int)}}
+		</h2>
+		{% else: %}
+		<h2>
+			doesn\'t work {users_calc_num1} {users_calc_num2} {users_calc_operation}
+		</h2>
+		{% endif %}
+	</body>
+</html>
